@@ -1,15 +1,20 @@
-package employee;
+package com.siemens.service.employee;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import employee.elements.*;
 import java.util.ArrayList;
 
-public class EmployeeManagement {
+import com.siemens.beans.employee.*;
+import com.siemens.dao.employee.*;
+import com.siemens.exceptions.employee.InvalidEmployeeIdException;
+
+public class EmployeeManagementImpl implements EmployeeManagement {
 
 	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-
+	
+	Storable dao = new StorableImpl();
+	
 	public static void main(String[] args) {
 		ArrayList<Employee> employees = new ArrayList<>();
 		double totalSal = 0.00;
@@ -28,7 +33,7 @@ public class EmployeeManagement {
 			System.out.println(e);
 		}
 	}
-
+	
 	private static Employee getNextEmployee() throws NumberFormatException, IOException {
 		Employee emp;
 		System.out.print("Enter the employee ID: ");
@@ -59,6 +64,31 @@ public class EmployeeManagement {
 		System.out.print("Enter zip code: ");
 		addr.setZipCode(Integer.parseInt(br.readLine()));
 		return addr;
+	}
+
+	@Override
+	public void insertEmployee(Employee emp) {
+		dao.insertEmployee(emp);
+	}
+
+	@Override
+	public void deleteEmployee(int empId) throws InvalidEmployeeIdException {
+		dao.deleteEmployee(empId);
+	}
+
+	@Override
+	public void updateEmployee(Employee emp) {
+		dao.updateEmployee(emp);
+	}
+
+	@Override
+	public void fetchEmployeeById(int empId) throws InvalidEmployeeIdException {
+		dao.fetchEmployeeById(empId);
+	}
+
+	@Override
+	public void fetchAllEmployees() {
+		dao.fetchAllEmployees();
 	}
 
 }

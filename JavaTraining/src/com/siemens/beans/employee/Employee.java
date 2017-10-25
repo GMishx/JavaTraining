@@ -1,4 +1,4 @@
-package employee.elements;
+package com.siemens.beans.employee;
 
 public class Employee {
 	private String name;
