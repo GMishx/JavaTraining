@@ -1,6 +1,11 @@
 package com.siemens.beans.employee;
 
-public class Address {
+public class Address implements java.io.Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -2745048529184453175L;
+	
 	private int addressID;
 	private String address1;
 	private String address2;
@@ -86,6 +91,68 @@ public class Address {
 		builder.append(zipCode);
 		builder.append("]");
 		return builder.toString();
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((City == null) ? 0 : City.hashCode());
+		result = prime * result + ((Street == null) ? 0 : Street.hashCode());
+		result = prime * result + ((address1 == null) ? 0 : address1.hashCode());
+		result = prime * result + ((address2 == null) ? 0 : address2.hashCode());
+		result = prime * result + addressID;
+		result = prime * result + zipCode;
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (obj == null) {
+			return false;
+		}
+		if (!(obj instanceof Address)) {
+			return false;
+		}
+		Address other = (Address) obj;
+		if (City == null) {
+			if (other.City != null) {
+				return false;
+			}
+		} else if (!City.equals(other.City)) {
+			return false;
+		}
+		if (Street == null) {
+			if (other.Street != null) {
+				return false;
+			}
+		} else if (!Street.equals(other.Street)) {
+			return false;
+		}
+		if (address1 == null) {
+			if (other.address1 != null) {
+				return false;
+			}
+		} else if (!address1.equals(other.address1)) {
+			return false;
+		}
+		if (address2 == null) {
+			if (other.address2 != null) {
+				return false;
+			}
+		} else if (!address2.equals(other.address2)) {
+			return false;
+		}
+		if (addressID != other.addressID) {
+			return false;
+		}
+		if (zipCode != other.zipCode) {
+			return false;
+		}
+		return true;
 	}
 
 }
