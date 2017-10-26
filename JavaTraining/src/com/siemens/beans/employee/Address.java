@@ -17,48 +17,54 @@ public class Address implements java.io.Serializable {
 		return addressID;
 	}
 
-	public void setAddressID(int addressID) {
+	public Address setAddressID(int addressID) {
 		this.addressID = addressID;
+		return this;
 	}
 
 	public String getAddress1() {
 		return address1;
 	}
 
-	public void setAddress1(String address1) {
+	public Address setAddress1(String address1) {
 		this.address1 = address1;
+		return this;
 	}
 
 	public String getAddress2() {
 		return address2;
 	}
 
-	public void setAddress2(String address2) {
+	public Address setAddress2(String address2) {
 		this.address2 = address2;
+		return this;
 	}
 
 	public String getStreet() {
 		return Street;
 	}
 
-	public void setStreet(String street) {
+	public Address setStreet(String street) {
 		Street = street;
+		return this;
 	}
 
 	public String getCity() {
 		return City;
 	}
 
-	public void setCity(String city) {
+	public Address setCity(String city) {
 		City = city;
+		return this;
 	}
 
 	public int getZipCode() {
 		return zipCode;
 	}
 
-	public void setZipCode(int zipCode) {
+	public Address setZipCode(int zipCode) {
 		this.zipCode = zipCode;
+		return this;
 	}
 
 	@Override
