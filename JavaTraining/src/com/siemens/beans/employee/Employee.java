@@ -7,7 +7,7 @@ public class Employee implements Comparable<Employee>, java.util.Comparator<Empl
 	private static final long serialVersionUID = -200752679115823038L;
 	
 	private String name;
-	private final int id;
+	private int id;
 	private double salary;
 	private Address employeeAddress;
 
@@ -17,6 +17,11 @@ public class Employee implements Comparable<Employee>, java.util.Comparator<Empl
 
 	public int getId() {
 		return id;
+	}
+
+	public Employee setId(int id) {
+		this.id = id;
+		return this;
 	}
 
 	public String getName() {
