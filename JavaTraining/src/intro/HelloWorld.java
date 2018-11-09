@@ -11,6 +11,7 @@ public class HelloWorld {
 		double doubleVariable = 123.456;
 		char charVariable = 'c';
 		boolean booleanVariable = true;
+		String name = "ABC";
 		System.out.println("Byte Variable= " + byteVariable);
 		System.out.println("Short Variable= " + shortVariable);
 		System.out.println("Int Variable= " + intVariable);
@@ -19,6 +20,7 @@ public class HelloWorld {
 		System.out.println("Double Variable= " + doubleVariable);
 		System.out.println("Char Variable= " + charVariable);
 		System.out.println("Boolean Variable= " + booleanVariable);
+		System.out.println("String = " + name);
 	}
 
 }
