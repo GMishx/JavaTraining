@@ -11,7 +11,7 @@ public class HelloWorld {
 		double doubleVariable = 123.456;
 		char charVariable = 'c';
 		boolean booleanVariable = true;
-		String name = "XYZ";
+		String name = "ABC";
 		System.out.println("Byte Variable= " + byteVariable);
 		System.out.println("Short Variable= " + shortVariable);
 		System.out.println("Int Variable= " + intVariable);
